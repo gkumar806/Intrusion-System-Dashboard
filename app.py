@@ -35,7 +35,7 @@ model = pickle.load(open("model.pkl", "rb"))
 encoders = pickle.load(open("encoders.pkl", "rb"))
 cols = pickle.load(open("columns.pkl", "rb"))
 
-st.success("✅ Model Loaded Successfully")
+st.success("Model Loaded Successfully")
 
 # ======================
 # LOAD DATASET (AUTO)
@@ -73,9 +73,9 @@ try:
     st.subheader("System Metrics")
 
     col1, col2, col3 = st.columns(3)
-    col1.metric("📈 Total Records", len(data))
-    col2.metric("✅ Normal", normal_count)
-    col3.metric("🚨 Anomalies", anomaly_count)
+    col1.metric("Total Records", len(data))
+    col2.metric("Normal", normal_count)
+    col3.metric("Anomalies", anomaly_count)
 
     # ======================
     # ALERTS
