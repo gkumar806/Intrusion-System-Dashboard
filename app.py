@@ -18,9 +18,6 @@ body {
 </style>
 """, unsafe_allow_html=True)
 
-# ======================
-# HEADER
-# ======================
 st.markdown("""
 <h1 style='text-align: center;'>AI Intrusion Detection Dashboard</h1>
 <p style='text-align: center; color: gray;'>Real-time anomaly detection using Machine Learning</p>
@@ -28,27 +25,18 @@ st.markdown("""
 
 st.caption("Built using Python, Machine Learning, and Streamlit")
 
-# ======================
-# LOAD MODEL + FILES
-# ======================
 model = pickle.load(open("model.pkl", "rb"))
 encoders = pickle.load(open("encoders.pkl", "rb"))
 cols = pickle.load(open("columns.pkl", "rb"))
 
 st.success("Model Loaded Successfully")
 
-# ======================
-# LOAD DATASET (AUTO)
-# ======================
 try:
     data = pd.read_csv("data.csv")  
 
     st.subheader("Data Preview")
     st.dataframe(data.head())
 
-    # ======================
-    # PREPROCESSING
-    # ======================
     for col in data.columns:
         if col in encoders:
             data[col] = encoders[col].transform(data[col])
@@ -58,15 +46,9 @@ try:
 
     data = data[cols]
 
-    # ======================
-    # PREDICTION
-    # ======================
     predictions = model.predict(data)
     data["Prediction"] = predictions
 
-    # ======================
-    # METRICS
-    # ======================
     anomaly_count = (data["Prediction"] == 1).sum()
     normal_count = (data["Prediction"] == 0).sum()
 
@@ -77,9 +59,6 @@ try:
     col2.metric("Normal", normal_count)
     col3.metric("Anomalies", anomaly_count)
 
-    # ======================
-    # ALERTS
-    # ======================
     st.subheader("Security Alerts")
 
     if anomaly_count > 0:
@@ -87,9 +66,7 @@ try:
     else:
         st.success("System Secure")
 
-    # ======================
-    # RESULTS
-    # ======================
+    # Results
     st.subheader("Detailed Results")
     st.dataframe(data.head(20))
 
