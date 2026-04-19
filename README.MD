@@ -1,4 +1,4 @@
- AI Intrusion Detection Dashboard
+AI Intrusion Detection Dashboard
 
 -  Developed an AI-powered Intrusion Detection Dashboard using Machine Learning  
 -  Implements preprocessing, feature alignment, and real-time anomaly detection  
@@ -9,3 +9,4 @@
 
 
 - ⚠️ **Full dataset is excluded due to size constraints; a sample dataset is included for demonstration and testing purposes**
+
