@@ -10,5 +10,5 @@
 -  Built with Python, Scikit-learn, Pandas, and Streamlit  
 
 
-- ⚠️ **Full dataset is excluded due to size constraints; a sample dataset is included for demonstration and testing purposes**
+- **Full dataset is excluded due to size constraints; a sample dataset is included for demonstration and testing purposes**
 
