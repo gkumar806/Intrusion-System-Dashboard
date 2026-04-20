@@ -1,4 +1,4 @@
-![alt text](<Screenshot 2026-04-20 024547-1.png>)
+![alt text](<Screenshot 2026-04-20 094626.png>)
 
  AI Intrusion Detection Dashboard
 

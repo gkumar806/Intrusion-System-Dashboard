@@ -2,6 +2,20 @@ import streamlit as st
 import pickle
 import pandas as pd
 
+st.markdown("""
+<style>
+/* Metric value (number) */
+[data-testid="stMetricValue"] {
+    color: white !important;
+}
+
+/* Metric label (text like Total Records, Normal, etc.) */
+[data-testid="stMetricLabel"] {
+    color: white !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.set_page_config(page_title="AI IDS Dashboard", layout="wide")
 
 st.markdown("""
